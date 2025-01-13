@@ -109,6 +109,8 @@ const instance = basicLightbox.create(
 );
 
 });
+ 
 
+createGalleryList
 
 
