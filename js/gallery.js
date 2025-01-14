@@ -111,6 +111,6 @@ const instance = basicLightbox.create(
 });
  
 
-createGalleryList
+const gallery
 
 
