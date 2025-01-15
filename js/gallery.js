@@ -93,15 +93,13 @@ const createGalleryList = image => {
 
 const productsCardTemplate = images.map(el => createGalleryList(el)).join('');
 
-
-
 const productsListEl = document.querySelector('.gallery')
 
 
 productsListEl.innerHTML = productsCardTemplate;
 
 
-productsListEl.addEventListener('click', event => {
+productsListEl.addEventListener('click', (event) => {
 event.preventDefault();
 const imageEl = event.target;
 
@@ -114,10 +112,10 @@ if(imageEl.nodeName !== 'IMG') {
 const originalImage = imageEl.dataset.source;
 const altText = imageEl.alt;
 
-const modalWindow = modalInstance.element().querySelector('img');
-modalWindow.scr = originalImage;
-modalWindow.alt = altText;
 
-modalInstance.show();
- 
+ const instance = basicLightbox.create(`
+  <img src="${originalImage}" alt="${altText}" width="800" height="600">
+`)
+instance.show()
+
 });
